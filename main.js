@@ -55,7 +55,7 @@ let badWordIndex = storyWords.findIndex(
 // check if all words are less than 10 characters
 let lengthCheck = storyWords.every(
   function(word){
-    if(word.length < 10) {
+    if(word.length <= 10) {
       return word;
     }    
   }
@@ -63,6 +63,7 @@ let lengthCheck = storyWords.every(
 
 
 // scan for word larger than 10 characters
+// if we move this above length check as a test the result will show true as the large word will be removed before the check.
 let bigOlWord = storyWords.findIndex(
   function(word){
     if(word.length > 10) {
@@ -70,9 +71,8 @@ let bigOlWord = storyWords.findIndex(
     }
   }
 );
-console.log(bigOlWord);
 storyWords[111] = 'whopping';
-
+console.log(bigOlWord);
 
 
 //console log true if all words meet the check
@@ -86,6 +86,10 @@ storyWords[78] = 'really';
 
 // count number of words
 console.log(count);
+
+// split words in story with a space
+console.log(storyWords.join(' '));
+
 
 // split words in story with a space
 console.log(storyWords.join(' '));
